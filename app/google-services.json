@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "35395884813",
+    "firebase_url": "https://familylounge-aaa1e.firebaseio.com",
+    "project_id": "familylounge-aaa1e",
+    "storage_bucket": "familylounge-aaa1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35395884813:android:707c499a95e441d7",
+        "android_client_info": {
+          "package_name": "lucasmatborges.familylounge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35395884813-uq5n42o674g5uepagf0j3dapk248h5ii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4UZjmwjH6Jb-Bf-r2aORXzbymH7nEdYI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
