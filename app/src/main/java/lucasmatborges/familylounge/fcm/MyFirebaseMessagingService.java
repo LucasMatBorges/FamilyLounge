@@ -59,7 +59,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         try {
 
             notificationBuilder = new NotificationCompat.Builder(this)
-                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setSmallIcon(R.mipmap.einstein_logo)
                     .setContentTitle(URLDecoder.decode(notificationData.getTitle(), "UTF-8"))
                     .setContentText(URLDecoder.decode(notificationData.getTextMessage(), "UTF-8"))
                     .setAutoCancel(true)
