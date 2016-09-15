@@ -1,27 +1,157 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="lucasmatborges.familylounge.MainFragment">
+    tools:context="lucasmatborges.familylounge.MainFragment"
+    android:background="@color/accent_material_dark">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MAIN"
-        android:padding="8dp"
-        android:textColor="#fff"
-        android:background="@color/colorPrimary"
-        android:textSize="28sp"
-        android:id="@+id/main_button"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/buttonCirurgia"
+        android:layout_toEndOf="@+id/buttonPaciente" />
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/textViewFirebase"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="72dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/textView2"
+        android:text="Informações atualizadas há 5 minutos"
+        android:id="@+id/textViewAtualizacao"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
+        android:textSize="22dp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Em andamento"
+            android:padding="8dp"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            android:textSize="18dp"
+            android:id="@+id/buttonStatus"
+        android:textAllCaps="false"
+        android:layout_below="@+id/textViewStatus"
+        android:layout_alignStart="@+id/textViewStatus" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="PACIENTE:"
+        android:id="@+id/textViewPaciente"
+        android:layout_below="@+id/textViewAtualizacao"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LUCAS MATHEUS BORGES"
+        android:padding="8dp"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
+        android:textSize="18dp"
+        android:id="@+id/buttonPaciente"
+        android:layout_below="@+id/textViewPaciente"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="CIRURGIA:"
+        android:id="@+id/textViewCirurgia"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/buttonPaciente"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frontal Lobal Epilepsy"
+        android:padding="8dp"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
+        android:textSize="18dp"
+        android:id="@+id/buttonCirurgia"
+        android:textAllCaps="false"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/textViewCirurgia"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="STATUS:"
+        android:id="@+id/textViewStatus"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/buttonCirurgia"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=" Previção para liberação do leito:"
+        android:id="@+id/textViewLeito"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_below="@+id/buttonStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5 minutos"
+        android:padding="8dp"
+        android:textColor="#fff"
+        android:background="@drawable/botao_cirurgia"
+        android:textSize="20dp"
+        android:id="@+id/buttonLeito"
+        android:textAllCaps="false"
+        android:layout_below="@+id/textViewLeito"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DETALHES"
+        android:padding="8dp"
+        android:textColor="#fff"
+        android:background="@drawable/botao_cirurgia"
+        android:textSize="20dp"
+        android:id="@+id/buttonDetalhes"
+        android:textAllCaps="false"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="82dp" />
+        android:layout_marginBottom="20dp" />
+
 </RelativeLayout>

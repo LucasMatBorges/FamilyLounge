@@ -24,8 +24,8 @@ import java.util.Map;
  */
 public class MainFragment extends Fragment {
 
-    //final TextView meunome = (TextView) findViewById(R.id.textView2);
     private TextView meunome;
+    private TextView textoFirebase;
     private Firebase mRef; //Firebase
 
     public MainFragment() {
@@ -38,32 +38,36 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         meunome = (TextView) rootView.findViewById(R.id.textView2);
+        textoFirebase = (TextView) rootView.findViewById(R.id.textViewFirebase);
 
-        final Button mainButton = (Button) rootView.findViewById(R.id.main_button);
+        final Button mainButton = (Button) rootView.findViewById(R.id.buttonStatus);
+        final Button BtnPaciente = (Button) rootView.findViewById(R.id.buttonPaciente);
+        final Button BtnCirurgia = (Button) rootView.findViewById(R.id.buttonCirurgia);
+        final Button BtnLeito = (Button) rootView.findViewById(R.id.buttonLeito);
+        final Button BtnDetalhes = (Button) rootView.findViewById(R.id.buttonDetalhes);
+        final Button BtnStatus = (Button) rootView.findViewById(R.id.buttonStatus);
 
         mRef = new Firebase("https://familylounge-aaa1e.firebaseio.com/");
 
-        //final Firebase novaRef = mRef.child("Pessoa");  //acessar um "child"
+        final Firebase novaRef = mRef.child("cirurgia");  //acessar um "child"
 
 
-        mRef.addValueEventListener(new ValueEventListener() {
+        novaRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 System.out.println(snapshot.getValue());
-                //String mensagem = snapshot.getValue(String.class);
-                String chega = "oi";
-                String agora = "k";
-                //String junto = (mensagem+agora);
-                //meunome.setText(mensagem);
-                //Toast.makeText(getActivity(), mensagem, Toast.LENGTH_SHORT).show();
 
                 Map<String,String> mapa = snapshot.getValue(Map.class);
-//
-                String nome = mapa.get("nome");
-//
-//                // meuTexto.setText(nome+ " "+ sobrenome+ " "+ email+ " " + telefone );
-               meunome.setText("ola, "+nome);
 
+                String cirurgia = mapa.get("cirurgia");
+                String paciente = mapa.get("paciente");
+                String status = mapa.get("status");
+                String leito = mapa.get("leito");
+
+                BtnPaciente.setText(" " + paciente+ " ");
+                BtnCirurgia.setText(" " + cirurgia+ " ");
+                BtnLeito.setText(" " + leito+ " ");
+                BtnStatus.setText(" " + status+ " ");
             }
 
             @Override
@@ -72,15 +76,16 @@ public class MainFragment extends Fragment {
             }
         });
 
+
         mainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 mainButton.setBackgroundColor(getContext().getResources().getColor(R.color.colorAccent));
-
+                String worldtoGuess = textoFirebase.getText().toString();
 
                 Toast.makeText(getActivity(),"Text!",Toast.LENGTH_SHORT).show();
-                meunome.setText("VAII");
+                mainButton.setText(worldtoGuess);
 
             }
         });
