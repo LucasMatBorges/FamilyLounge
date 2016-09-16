@@ -35,17 +35,17 @@ public class MainActivity extends AppCompatActivity
         String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
 
         //Set the fragment initially
-        Bundle bundle = new Bundle();
-        bundle.putString("lucas", send);
+        //Bundle bundle = new Bundle();
+        //bundle.putString("lucas", send);
         MainFragment fragment = new MainFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
-        fragment.setArguments(bundle);
+        //fragment.setArguments(bundle);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -27,6 +27,7 @@ public class LoginScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_screen);
         Firebase.setAndroidContext(this);
+        String x = "j";
 
         mRef = new Firebase("https://familylounge-aaa1e.firebaseio.com/");
 
