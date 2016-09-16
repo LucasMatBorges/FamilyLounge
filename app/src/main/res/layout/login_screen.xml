@@ -25,7 +25,7 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:id="@+id/editTextID"
-        android:text="Prontuário"
+        android:hint="Prontuário"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="85dp"
         android:layout_above="@+id/textView4"

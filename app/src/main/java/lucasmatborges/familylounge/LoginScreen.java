@@ -89,6 +89,10 @@ public class LoginScreen extends AppCompatActivity {
 
                     if (prontuario.equals(arrayWords[i])) { // char é uma letra
                         textoverifica.setText("true");
+                        break;
+                    }
+                    else{
+                        textoverifica.setText("false");
                     }
                 }
             }
