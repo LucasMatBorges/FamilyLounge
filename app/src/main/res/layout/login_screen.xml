@@ -52,6 +52,23 @@
         android:onClick="logar"
         android:layout_above="@+id/textView4" />
 
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageView2"
+        android:background="@drawable/cardiacbeat"
+        android:layout_above="@+id/textView3"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/textViewProntuario"
+        android:layout_above="@+id/editTextID"
+        android:layout_alignStart="@+id/button"
+        android:text="k" />
+
 </RelativeLayout>
 
 
