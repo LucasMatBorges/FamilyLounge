@@ -193,6 +193,10 @@ public class LoginScreen extends AppCompatActivity {
 
     }
 
+    public void info (View view){
+        Intent openInfoActivity = new Intent(this, InfoActivity.class);
+        startActivity(openInfoActivity);
+    }
 
 public void verificar (){
     EditText editText = (EditText) findViewById(R.id.editTextID);

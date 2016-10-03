@@ -29,7 +29,7 @@
         android:gravity="center_vertical"
         android:layout_below="@+id/textView3"
         android:layout_toEndOf="@+id/textViewProntuario"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="35dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,7 +39,8 @@
         android:id="@+id/textView4"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="info" />
 
     <Button
         android:layout_width="fill_parent"
@@ -52,11 +53,12 @@
         android:textSize="20dp"
         android:layout_below="@+id/editTextID"
         android:layout_alignParentStart="true"
-        android:textColor="@color/abc_primary_text_material_dark" />
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:layout_marginTop="10dp" />
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:id="@+id/imageView2"
         android:background="@drawable/heart"
         android:layout_above="@+id/textView3"
@@ -77,7 +79,8 @@
         android:id="@+id/imageButton"
         android:layout_above="@+id/textView4"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/info" />
+        android:background="@drawable/info"
+        android:onClick="info" />
 
 </RelativeLayout>
 
