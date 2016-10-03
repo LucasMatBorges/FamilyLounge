@@ -1,10 +1,12 @@
 package lucasmatborges.familylounge;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,7 +38,28 @@ public class LoginScreen extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.editTextID);
         final String prontuario = editText.getText().toString();
         final TextView textoverifica = (TextView) findViewById(R.id.textViewProntuario);
+        editText.setRawInputType(Configuration.KEYBOARD_QWERTY);
 
+
+         editText.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                {
+                    switch (keyCode)
+                    {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            enter();
+                            return true;
+                        default:
+                            break;
+                    }
+                }
+                return false;
+            }
+        });
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
@@ -64,6 +87,58 @@ public class LoginScreen extends AppCompatActivity {
             }
         });
 
+
+    }
+
+
+    public void enter (){
+
+
+        EditText editText = (EditText) findViewById(R.id.editTextID);
+        final String prontuario = editText.getText().toString();
+        final TextView textoverifica = (TextView) findViewById(R.id.textViewProntuario);
+        mRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                System.out.println(snapshot.getValue());
+
+                Map<String, String> mapa = snapshot.getValue(Map.class);
+
+                String Prontuario = mapa.get("prontuarios");
+
+                String[] arrayWords = Prontuario.split(",");
+                int n = arrayWords.length; // Gives n such that 0 <= n < 2 (arrayWords.length)
+                for (int i = 0; i < arrayWords.length; i++) {
+                    System.out.println("For prontuario: " + prontuario);
+                    System.out.println("For array: " + arrayWords[i]);
+
+                    if (prontuario.equals(arrayWords[i])) { // char é uma letra
+                        textoverifica.setText("true");
+                        break;
+                    }
+                    else{
+                        textoverifica.setText("false");
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                System.out.println("The read failed: " + firebaseError.getMessage());
+            }
+        });
+
+        // Comanda para criar a splashScreen
+        Runnable runnable3secs = new Runnable() {
+            @Override
+            public void run() {
+                verificar();
+
+            }
+        };
+
+        Handler myhandler = new Handler();
+        myhandler.postDelayed(runnable3secs,500); // 3000 = tempo de execução da splash ( 3000 milisegundos = 3 segundos)
 
     }
 
@@ -130,6 +205,7 @@ public void verificar (){
     if (verifica.equals("true")){ // NÃO FUNCIONA O "=="
         editText.setText("");
         Intent openGameMulti = new Intent(this, MainActivity.class);
+        textoverifica.setText("false");
         openGameMulti.putExtra("POINTS_IDENTIFIER", prontuario);
         startActivity(openGameMulti);
         Toast.makeText(this, verifica, Toast.LENGTH_SHORT).show();
