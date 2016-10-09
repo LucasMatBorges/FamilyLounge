@@ -37,6 +37,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        final String myStr = getArguments().getString("my_key");
         meunome = (TextView) rootView.findViewById(R.id.textView2);
         textoFirebase = (TextView) rootView.findViewById(R.id.textViewFirebase);
         //final Bundle bundle = this.getArguments();// Pega os dados enviados
@@ -86,7 +87,7 @@ public class MainFragment extends Fragment {
                 mainButton.setBackgroundColor(getContext().getResources().getColor(R.color.colorAccent));
                 String worldtoGuess = textoFirebase.getText().toString();
                // Toast.makeText(getActivity(),myInt,Toast.LENGTH_SHORT).show();
-                mainButton.setText(worldtoGuess);
+                mainButton.setText(myStr);
 
             }
         });

@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/einstein_logo"
+        android:icon="@mipmap/seringa"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -23,7 +23,16 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".InfoActivity"></activity>
+        <activity
+            android:name=".DefaultIntro"
+            android:label="Intro Label"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name=".InfoActivity"
+            android:label="Sobre"
+            android:theme="@style/FullscreenTheme">
+        </activity>
     </application>
 
 </manifest>

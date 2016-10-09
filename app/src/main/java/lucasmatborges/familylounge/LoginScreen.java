@@ -1,6 +1,8 @@
 package lucasmatborges.familylounge;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +32,29 @@ public class LoginScreen extends AppCompatActivity {
         setContentView(R.layout.login_screen);
         Firebase.setAndroidContext(this);
         String x = "j";
+
+        // SLIDE INTRO
+        Thread t=new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                SharedPreferences sharedPreferences = getSharedPreferences(Config.FLAG, Context.MODE_PRIVATE);
+
+                if(sharedPreferences.getBoolean(Config.FLAG,true)){
+
+
+                    startActivity(new Intent(LoginScreen.this,DefaultIntro.class));
+
+                    SharedPreferences.Editor e=sharedPreferences.edit();
+
+                    e.putBoolean(Config.FLAG,false);
+
+                    e.apply();
+                }
+            }
+        });
+        t.start();
+
 
         mRef = new Firebase("https://familylounge-aaa1e.firebaseio.com/");
 
@@ -180,7 +205,7 @@ public class LoginScreen extends AppCompatActivity {
         });
 
         // Comanda para criar a splashScreen
-        Runnable runnable3secs = new Runnable() {
+        Runnable runnable3secs =    new Runnable() {
             @Override
             public void run() {
                 verificar();

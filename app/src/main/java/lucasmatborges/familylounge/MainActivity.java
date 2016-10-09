@@ -12,7 +12,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
+import android.widget.Toast;
 import com.firebase.client.Firebase;
 import com.google.firebase.iid.FirebaseInstanceId;
 
@@ -32,18 +37,22 @@ public class MainActivity extends AppCompatActivity
         //Firebase Notification
         System.out.println("MainActivity.onCreate: " + FirebaseInstanceId.getInstance().getToken());
 
-        String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
+        final String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
 
         //Set the fragment initially
         //Bundle bundle = new Bundle();
         //bundle.putString("lucas", send);
+
+
         MainFragment fragment = new MainFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("my_key", "Funcionou");
+        fragment.setArguments(bundle);
         android.support.v4.app.FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
         //fragment.setArguments(bundle);
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -51,7 +60,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, send, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
