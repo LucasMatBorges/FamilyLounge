@@ -45,7 +45,8 @@
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
         android:textSize="16sp"
-        android:text="Todas as informações sobre os procedimentos realizados na cirurgia"/>
+        android:text="Todas as informações sobre os procedimentos realizados na cirurgia"
+        android:textStyle="bold" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="64dp" />

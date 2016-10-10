@@ -36,7 +36,7 @@ public final class DefaultIntro extends AppIntro {
     }
 
     private void loadMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginScreen.class);
         startActivity(intent);
     }
 

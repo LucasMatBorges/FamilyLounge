@@ -38,32 +38,25 @@ public class MainActivity extends AppCompatActivity
         System.out.println("MainActivity.onCreate: " + FirebaseInstanceId.getInstance().getToken());
 
         final String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
-
-        //Set the fragment initially
-        //Bundle bundle = new Bundle();
-        //bundle.putString("lucas", send);
-
-
         MainFragment fragment = new MainFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("my_key", "Funcionou");
+        bundle.putString("my_key", send);
         fragment.setArguments(bundle);
         android.support.v4.app.FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
-        //fragment.setArguments(bundle);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, send, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, send, Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         toggle = new ActionBarDrawerToggle(
@@ -116,6 +109,10 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             //Set the fragment initially
             MainFragment fragment = new MainFragment();
+            final String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
+            Bundle bundle = new Bundle();
+            bundle.putString("my_key", send);
+            fragment.setArguments(bundle);
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -123,11 +120,25 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             //Set the fragment initially
             GalleryFragment fragment = new GalleryFragment();
+            final String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
+            Bundle bundle = new Bundle();
+            bundle.putString("my_key", send);
+            fragment.setArguments(bundle);
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
         } else if (id == R.id.nav_slideshow) {
+            //Set the fragment initially
+            DetalheFragment fragment = new DetalheFragment();
+            final String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
+            Bundle bundle = new Bundle();
+            bundle.putString("my_key", send);
+            fragment.setArguments(bundle);
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_manage) {
 

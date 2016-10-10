@@ -40,8 +40,6 @@ public class MainFragment extends Fragment {
         final String myStr = getArguments().getString("my_key");
         meunome = (TextView) rootView.findViewById(R.id.textView2);
         textoFirebase = (TextView) rootView.findViewById(R.id.textViewFirebase);
-        //final Bundle bundle = this.getArguments();// Pega os dados enviados
-        //final String myInt = bundle.getString("lucas", "nada"); // Pega dados enviados
 
         final Button mainButton = (Button) rootView.findViewById(R.id.buttonStatus);
         final Button BtnPaciente = (Button) rootView.findViewById(R.id.buttonPaciente);
@@ -50,10 +48,9 @@ public class MainFragment extends Fragment {
         final Button BtnDetalhes = (Button) rootView.findViewById(R.id.buttonDetalhes);
         final Button BtnStatus = (Button) rootView.findViewById(R.id.buttonStatus);
 
-        mRef = new Firebase("https://familylounge-aaa1e.firebaseio.com/");
+        mRef = new Firebase("https://familylounge-aaa1e.firebaseio.com/cirurgias");
 
-        final Firebase novaRef = mRef.child("cirurgia");  //acessar um "child"
-
+        final Firebase novaRef = mRef.child(myStr);  //acessar um "child"
 
         novaRef.addValueEventListener(new ValueEventListener() {
             @Override

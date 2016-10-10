@@ -74,7 +74,7 @@
             android:textSize="18dp"
             android:id="@+id/buttonPaciente"
             android:layout_below="@+id/textViewPaciente"
-            android:layout_alignStart="@+id/textView"
+            android:layout_alignStart="@+id/buttonSala"
             android:layout_marginLeft="10dp" />
 
         <TextView
