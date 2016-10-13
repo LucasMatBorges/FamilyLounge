@@ -33,20 +33,22 @@ public class DetalheFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View detalheView = inflater.inflate(R.layout.fragment_detalhe, container, false);
-        final String myStr = getArguments().getString("my_key");
-        final String myStr2 = getArguments().getString("my_key2");
 
         Bundle mainBundle = getArguments();
-        Bundle b1 = mainBundle.getBundle("b1");
+        final Bundle b1 = mainBundle.getBundle("my_b");
         final Bundle b2 = mainBundle.getBundle("my_b2");
-        final String b22 = getArguments().getString("my_key2");
+
+        final String detalhe = b1.getString("my_key");
+        final String cirurgia = b2.getString("my_key2");
+
 
         final Button BtnSala = (Button) detalheView.findViewById(R.id.buttonSala);
         final Button BtnMedico = (Button) detalheView.findViewById(R.id.buttonMedico);
 
         mRef = new Firebase("https://familylounge-aaa1e.firebaseio.com/procedimentos");
 
-        final Firebase novaRef = mRef.child("amigdalectomia");  //acessar um "child"
+        final Firebase novaRef = mRef.child(cirurgia);  //acessar um "child"
+
 
         novaRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -55,29 +57,30 @@ public class DetalheFragment extends Fragment {
 
                 Map<String,String> mapa = snapshot.getValue(Map.class);
 
-                String procedimento = mapa.get(myStr);
+                String procedimento = mapa.get(detalhe);
 
-                BtnSala.setText(b22);
+                BtnSala.setText(procedimento);
+                BtnMedico.setText("Procedimento: " + detalhe);
+
             }
+
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
                 System.out.println("The read failed: " + firebaseError.getMessage());
             }
+
         });
+
 
 
         BtnSala.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BtnSala.setBackgroundColor(getContext().getResources().getColor(R.color.colorAccent));
-                BtnSala.setText(myStr);
+                BtnSala.setText("vai");
             }
         });
         return detalheView;
     }
-
-
-
-
 }

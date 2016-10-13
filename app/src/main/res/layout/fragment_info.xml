@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="lucasmatborges.familylounge.InfoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:background="#FF005D88"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            app:srcCompat="@drawable/hospital"
+            android:id="@+id/imageView3"
+            android:layout_below="@+id/textView8"
+            android:layout_centerHorizontal="true"
+            android:layout_height="100dp"
+            android:layout_width="100dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Atualização: 10/15"
+            android:id="@+id/textView8"
+            android:layout_below="@+id/textView7"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="FAMILY LOUNGE versão 1.0.0"
+            android:id="@+id/textView7"
+            android:layout_marginTop="23dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:autoText="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="225dp"
+        android:background="#FF016391">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:text="O FAMILY LOUNGE App foi criado com a missão de otimizar o tempo durante a espera dos acompanhantes de pacientes em cirurgia no hospital Albert Einsten. Com uma inteface simples e informações diretas, o aplicativo proporciona o acompanhamento da cirurgia em tempo real, com possibilidade de acessar mais informaçoes sobre cada procedimento."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textStyle="normal|bold"
+                android:textSize="18sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

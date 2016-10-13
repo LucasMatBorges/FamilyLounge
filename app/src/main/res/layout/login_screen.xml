@@ -20,7 +20,8 @@
         android:textSize="30dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorPrimary" />
 
     <EditText
         android:layout_width="400dp"
@@ -30,7 +31,8 @@
         android:gravity="center_vertical"
         android:layout_below="@+id/imageView2"
         android:layout_toEndOf="@+id/textViewProntuario"
-        android:layout_marginTop="80dp" />
+        android:layout_marginTop="80dp"
+        android:textColorLink="@android:color/holo_red_dark" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,7 +50,7 @@
         android:layout_height="wrap_content"
         android:text="ENTRAR"
         android:id="@+id/button"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:onClick="logar"
         android:textStyle="bold"
         android:textSize="20dp"

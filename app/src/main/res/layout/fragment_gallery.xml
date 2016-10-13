@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="lucasmatborges.familylounge.GalleryFragment">
@@ -7,9 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/relativeLayout2"
-        android:layout_alignParentStart="true"
         android:background="#0084c1"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp">
 
@@ -66,49 +67,6 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="PROCED"
-                    android:id="@+id/textPROCEDIMENTO"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="INÍCIO"
-                    android:id="@+id/textINICIO"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="DURAÇÃO"
-                    android:id="@+id/textDURAÇÃO"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="INFO"
-                    android:id="@+id/textiNFO"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:layout_marginRight="10dp"
-                    android:textStyle="bold" />
             </TableRow>
 
             <TableRow
@@ -120,7 +78,59 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Check-in        [x]"
+                    android:text="PROCEDIMENTO "
+                    android:id="@+id/textProced"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="INÍCIO"
+                    android:id="@+id/textInicio"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="DURAÇÃO"
+                    android:id="@+id/textDuracao"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginRight="15dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:text="INFO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textInfo"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FF006A9B">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Check-in       [x]"
                     android:id="@+id/textCheckProced"
                     android:layout_weight="1"
                     android:layout_marginTop="5dp"
@@ -133,7 +143,7 @@
                     android:text="10:35"
                     android:id="@+id/textCheckInicio"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:gravity="center" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -142,14 +152,21 @@
                     android:text="15 min"
                     android:id="@+id/textCheckDuracao"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:layout_marginRight="15dp"
+                    android:gravity="center" />
 
-                <Button
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:text="I"
-                    android:id="@+id/buttonInfo" />
+                <ImageButton
+                    android:id="@+id/buttonInfoCheck"
+                    android:background="@drawable/info"
+                    android:layout_below="@+id/button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp" />
+
             </TableRow>
+
 
             <TableRow
                 android:layout_width="match_parent"
@@ -175,7 +192,7 @@
                     android:text="10:35"
                     android:id="@+id/textExamesInicio"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:gravity="center" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -184,17 +201,18 @@
                     android:text="15 min"
                     android:id="@+id/textView10"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:layout_marginRight="15dp"
+                    android:gravity="center" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Small Text"
-                    android:id="@+id/textView12"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:layout_marginRight="10dp" />
+                <ImageButton
+                    android:id="@+id/buttonInfoExames"
+                    android:background="@drawable/info"
+                    android:layout_below="@+id/button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp" />
 
             </TableRow>
 
@@ -209,7 +227,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Anestesia        [x]"
+                    android:text="Anestesia    [x]"
                     android:id="@+id/textAnestesiaProced"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -222,7 +240,7 @@
                     android:text="10:35"
                     android:id="@+id/textAnestesiaInicio"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:gravity="center" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -231,17 +249,18 @@
                     android:text="15 min"
                     android:id="@+id/textAnestesiaDuracao"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:layout_marginRight="15dp"
+                    android:gravity="center" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Small Text"
-                    android:id="@+id/textView13"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:layout_marginRight="10dp" />
+                <ImageButton
+                    android:id="@+id/buttonInfoAnestesia"
+                    android:background="@drawable/info"
+                    android:layout_below="@+id/button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp" />
 
             </TableRow>
 
@@ -256,7 +275,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Cirurgia         [x]"
+                    android:text="Cirurgia        [x]"
                     android:id="@+id/textCirurgiaProced"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -269,7 +288,7 @@
                     android:text="10:35"
                     android:id="@+id/textCirurgiaInicio"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:gravity="center" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -278,18 +297,18 @@
                     android:text="15 min"
                     android:id="@+id/textCirurgiaDuracao"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:layout_marginRight="15dp"
+                    android:gravity="center" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Small Text"
-                    android:id="@+id/textView14"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:layout_column="31"
-                    android:layout_marginRight="10dp" />
+                <ImageButton
+                    android:id="@+id/buttonInfoCirurgia"
+                    android:background="@drawable/info"
+                    android:layout_below="@+id/button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp" />
 
             </TableRow>
 
@@ -317,7 +336,7 @@
                     android:text="10:35"
                     android:id="@+id/textFinalizacaoInicio"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:gravity="center" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -326,32 +345,31 @@
                     android:text="15 min"
                     android:id="@+id/textFinalizacaoDuracao"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:layout_marginRight="15dp"
+                    android:gravity="center" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Small Text"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:id="@+id/textView15"
-                    android:layout_marginRight="10dp" />
+                <ImageButton
+                    android:id="@+id/buttonInfoFinalizacao"
+                    android:background="@drawable/info"
+                    android:layout_below="@+id/button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp" />
 
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#0084c1"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
+                android:background="#0084c1">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Curativos        [x]"
+                    android:text="Curativos    [x]"
                     android:id="@+id/textCurativosProced"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -364,7 +382,7 @@
                     android:text="10:35"
                     android:id="@+id/textCurativosInicio"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:gravity="center" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -373,32 +391,38 @@
                     android:text="15 min"
                     android:id="@+id/textCurativosDuracao"
                     android:layout_weight="1"
-                    android:gravity="right" />
+                    android:layout_marginRight="15dp"
+                    android:gravity="center" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Small Text"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:id="@+id/textView16"
-                    android:layout_marginRight="10dp" />
+                <ImageButton
+                    android:id="@+id/buttonInfoCurativos"
+                    android:background="@drawable/info"
+                    android:layout_below="@+id/button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp" />
 
             </TableRow>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Para mais informações, favor se dirigir ao balcão de atendimento"
-                android:id="@+id/textView9"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="#0084c1"
-                android:layout_below="@+id/relativeLayout2"
-                android:layout_alignParentStart="true" />
         </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Para mais informações, favor se dirigir ao balcão de atendimento"
+            android:id="@+id/textView9"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:background="#0084c1"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="23dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="#FF880000" />
 
     </RelativeLayout>
 

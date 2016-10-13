@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -38,7 +39,12 @@ public class GalleryFragment extends Fragment {
         final Button BtnSala = (Button) galleryView.findViewById(R.id.buttonSala);
         final Button BtnMedico = (Button) galleryView.findViewById(R.id.buttonMedico);
         final Button BtnCirurgia = (Button) galleryView.findViewById(R.id.buttonCirurgia);
-        final Button BtnInfo = (Button) galleryView.findViewById(R.id.buttonInfo);
+        final ImageButton BtnInfoCheck = (ImageButton) galleryView.findViewById(R.id.buttonInfoCheck);
+        final ImageButton BtnInfoExames = (ImageButton) galleryView.findViewById(R.id.buttonInfoExames);
+        final ImageButton BtnInfoAnestesia = (ImageButton) galleryView.findViewById(R.id.buttonInfoAnestesia);
+        final ImageButton BtnInfoCirurgia = (ImageButton) galleryView.findViewById(R.id.buttonInfoCirurgia);
+        final ImageButton BtnInfoFinalizacao = (ImageButton) galleryView.findViewById(R.id.buttonInfoFinalizacao);
+        final ImageButton BtnInfoCurativos = (ImageButton) galleryView.findViewById(R.id.buttonInfoCurativos);
 
         mRef = new Firebase("https://familylounge-aaa1e.firebaseio.com/cirurgias");
 
@@ -67,7 +73,47 @@ public class GalleryFragment extends Fragment {
         });
 
 
-        BtnInfo.setOnClickListener(new View.OnClickListener() {
+        BtnInfoCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String cirurgia = (String) BtnCirurgia.getText();
+                DetalheFragment fragment = new DetalheFragment();
+                Bundle mainBundle = new Bundle();
+                Bundle bundle = new Bundle();
+                Bundle bundle2 = new Bundle();
+                bundle.putString("my_key", "check-in");
+                bundle2.putString("my_key2", cirurgia.toLowerCase());
+                mainBundle.putBundle("my_b", bundle);
+                mainBundle.putBundle("my_b2", bundle2);
+                fragment.setArguments(mainBundle);
+                android.support.v4.app.FragmentTransaction fragmentTransaction =
+                        getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.commit();
+            }
+        });
+        BtnInfoExames.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String cirurgia = (String) BtnCirurgia.getText();
+                DetalheFragment fragment = new DetalheFragment();
+                Bundle mainBundle = new Bundle();
+                Bundle bundle = new Bundle();
+                Bundle bundle2 = new Bundle();
+                bundle.putString("my_key", "exames");
+                bundle2.putString("my_key2", cirurgia.toLowerCase());
+                mainBundle.putBundle("my_b", bundle);
+                mainBundle.putBundle("my_b2", bundle2);
+                fragment.setArguments(mainBundle);
+                android.support.v4.app.FragmentTransaction fragmentTransaction =
+                        getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.commit();
+            }
+        });
+        BtnInfoAnestesia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -77,7 +123,67 @@ public class GalleryFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 Bundle bundle2 = new Bundle();
                 bundle.putString("my_key", "anestesia");
-                bundle2.putString("my_key2", "amigdalectomia");
+                bundle2.putString("my_key2", cirurgia.toLowerCase());
+                mainBundle.putBundle("my_b", bundle);
+                mainBundle.putBundle("my_b2", bundle2);
+                fragment.setArguments(mainBundle);
+                android.support.v4.app.FragmentTransaction fragmentTransaction =
+                        getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.commit();
+            }
+        });
+        BtnInfoCirurgia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String cirurgia = (String) BtnCirurgia.getText();
+                DetalheFragment fragment = new DetalheFragment();
+                Bundle mainBundle = new Bundle();
+                Bundle bundle = new Bundle();
+                Bundle bundle2 = new Bundle();
+                bundle.putString("my_key", "cirurgia");
+                bundle2.putString("my_key2", cirurgia.toLowerCase());
+                mainBundle.putBundle("my_b", bundle);
+                mainBundle.putBundle("my_b2", bundle2);
+                fragment.setArguments(mainBundle);
+                android.support.v4.app.FragmentTransaction fragmentTransaction =
+                        getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.commit();
+            }
+        });
+        BtnInfoFinalizacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String cirurgia = (String) BtnCirurgia.getText();
+                DetalheFragment fragment = new DetalheFragment();
+                Bundle mainBundle = new Bundle();
+                Bundle bundle = new Bundle();
+                Bundle bundle2 = new Bundle();
+                bundle.putString("my_key", "finalizacao");
+                bundle2.putString("my_key2", cirurgia.toLowerCase());
+                mainBundle.putBundle("my_b", bundle);
+                mainBundle.putBundle("my_b2", bundle2);
+                fragment.setArguments(mainBundle);
+                android.support.v4.app.FragmentTransaction fragmentTransaction =
+                        getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.commit();
+            }
+        });
+        BtnInfoCurativos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String cirurgia = (String) BtnCirurgia.getText();
+                DetalheFragment fragment = new DetalheFragment();
+                Bundle mainBundle = new Bundle();
+                Bundle bundle = new Bundle();
+                Bundle bundle2 = new Bundle();
+                bundle.putString("my_key", "curativos");
+                bundle2.putString("my_key2", cirurgia.toLowerCase());
                 mainBundle.putBundle("my_b", bundle);
                 mainBundle.putBundle("my_b2", bundle2);
                 fragment.setArguments(mainBundle);
@@ -89,8 +195,4 @@ public class GalleryFragment extends Fragment {
         });
         return galleryView;
     }
-
-
-
-
 }

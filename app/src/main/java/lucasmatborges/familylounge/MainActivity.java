@@ -71,12 +71,17 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        int count = getFragmentManager().getBackStackEntryCount();
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        } else if (count == 0){
             super.onBackPressed();
         }
-    }
+         else {
+                getFragmentManager().popBackStack();
+            }
+
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -130,7 +135,7 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
         } else if (id == R.id.nav_slideshow) {
             //Set the fragment initially
-            DetalheFragment fragment = new DetalheFragment();
+            InfoFragment fragment = new InfoFragment();
             final String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
             Bundle bundle = new Bundle();
             bundle.putString("my_key", send);
@@ -141,6 +146,17 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_manage) {
+            //Set the fragment initially
+            InfoFragment fragment = new InfoFragment();
+            final String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
+            Bundle bundle = new Bundle();
+            bundle.putString("my_key", send);
+            fragment.setArguments(bundle);
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+
 
         } else if (id == R.id.nav_share) {
 
@@ -150,4 +166,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
