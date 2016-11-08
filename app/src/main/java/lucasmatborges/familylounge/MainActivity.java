@@ -1,8 +1,11 @@
 package lucasmatborges.familylounge;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,9 +20,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
+
+import static android.R.attr.name;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -27,6 +41,9 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView = null;
     Toolbar toolbar = null;
     ActionBarDrawerToggle toggle; //Hamburguer
+    boolean doubleBackToExitPressedOnce = false;
+    boolean a = false;
+    private Firebase mRef; //Firebase
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +66,12 @@ public class MainActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        mRef = new Firebase("https://familylounge-aaa1e.firebaseio.com/cirurgias");
+
+        final Firebase novaRef = mRef.child(send);  //acessar um "child"
+
+
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -67,21 +90,75 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        novaRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                System.out.println(snapshot.getValue());
+
+                Map<String,String> mapa = snapshot.getValue(Map.class);
+
+                String paciente = mapa.get("paciente");
+                View header = navigationView.getHeaderView(0);
+                TextView text = (TextView) header.findViewById(R.id.username);
+                TextView text2 = (TextView) header.findViewById(R.id.email);
+                text.setText(paciente);
+                text2.setText(send);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                System.out.println("The read failed: " + firebaseError.getMessage());
+            }
+        });
+
+
     }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        int count = getFragmentManager().getBackStackEntryCount();
+        int count = getSupportFragmentManager().getBackStackEntryCount(); // PRECISAVA COLOCAR O GETSUPPORTFRAGMENTMANAGER -> SEM O SUPPORT NÃO FUNCIONA
+//        String strI = String.valueOf(count);
+//        Toast.makeText(this, strI, Toast.LENGTH_SHORT).show();
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else if (count == 0){
-            super.onBackPressed();
         }
-         else {
-                getFragmentManager().popBackStack();
-            }
+
+        else if (count >0){
+            getSupportFragmentManager().popBackStack();
+        }
+        else if(a==true){
+            //Set the fragment initially
+            MainFragment fragment = new MainFragment();
+            final String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
+            Bundle bundle = new Bundle();
+            bundle.putString("my_key", send);
+            fragment.setArguments(bundle);
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+            a=false;
 
         }
+
+        else {
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce=false;
+                }
+            }, 2000);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -131,6 +208,7 @@ public class MainActivity extends AppCompatActivity
             fragment.setArguments(bundle);
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
+            a = true;
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
         } else if (id == R.id.nav_slideshow) {
@@ -140,6 +218,7 @@ public class MainActivity extends AppCompatActivity
             Bundle bundle = new Bundle();
             bundle.putString("my_key", send);
             fragment.setArguments(bundle);
+            a = true;
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -152,6 +231,7 @@ public class MainActivity extends AppCompatActivity
             Bundle bundle = new Bundle();
             bundle.putString("my_key", send);
             fragment.setArguments(bundle);
+            a = true;
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -166,5 +246,4 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }

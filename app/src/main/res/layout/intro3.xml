@@ -17,7 +17,7 @@
         android:textColor="#ffffff"
         android:paddingRight="32dp"
         android:textSize="35dp"
-        android:text="PROCEDIMENTOS"
+        android:text="ETAPAS"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -45,7 +45,7 @@
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
         android:textSize="16sp"
-        android:text="Todas as informações sobre os procedimentos realizados na cirurgia"
+        android:text="Todas os detalhes sobre as etapas realizados"
         android:textStyle="bold" />
     <TextView
         android:layout_width="fill_parent"

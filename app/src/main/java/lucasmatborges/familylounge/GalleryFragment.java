@@ -50,6 +50,7 @@ public class GalleryFragment extends Fragment {
 
         final Firebase novaRef = mRef.child(myStr);  //acessar um "child"
 
+
         novaRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
@@ -63,7 +64,7 @@ public class GalleryFragment extends Fragment {
 
                 BtnCirurgia.setText(cirurgia);
                 BtnMedico.setText(" MÉDICO: " + medico + " ");
-                BtnSala.setText(" SALA: " + sala+ " ");
+                BtnSala.setText(" " + sala+ " ");
             }
 
             @Override
@@ -71,6 +72,8 @@ public class GalleryFragment extends Fragment {
                 System.out.println("The read failed: " + firebaseError.getMessage());
             }
         });
+
+
 
 
         BtnInfoCheck.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +93,7 @@ public class GalleryFragment extends Fragment {
                 android.support.v4.app.FragmentTransaction fragmentTransaction =
                         getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
@@ -110,6 +114,7 @@ public class GalleryFragment extends Fragment {
                 android.support.v4.app.FragmentTransaction fragmentTransaction =
                         getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
@@ -130,6 +135,7 @@ public class GalleryFragment extends Fragment {
                 android.support.v4.app.FragmentTransaction fragmentTransaction =
                         getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
@@ -150,6 +156,7 @@ public class GalleryFragment extends Fragment {
                 android.support.v4.app.FragmentTransaction fragmentTransaction =
                         getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
@@ -170,6 +177,7 @@ public class GalleryFragment extends Fragment {
                 android.support.v4.app.FragmentTransaction fragmentTransaction =
                         getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
@@ -189,7 +197,8 @@ public class GalleryFragment extends Fragment {
                 fragment.setArguments(mainBundle);
                 android.support.v4.app.FragmentTransaction fragmentTransaction =
                         getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.replace(R.id.fragment_container, fragment, "teste");
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });

@@ -48,7 +48,7 @@
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
         android:textSize="16sp"
-        android:text="Aplicativo que mostra todas as informações úteis durante a cirurgia"
+        android:text="Todas as informações úteis durante o procedimento cirurgico"
         android:textStyle="bold" />
     <TextView
         android:layout_width="fill_parent"

@@ -1,16 +1,22 @@
 package lucasmatborges.familylounge;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +26,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 
+import java.io.InputStream;
 import java.util.Map;
 import java.util.Random;
 
@@ -114,7 +121,6 @@ public class LoginScreen extends AppCompatActivity {
 
 
     }
-
 
     public void enter (){
 
@@ -242,7 +248,6 @@ public void verificar (){
     else {
         Toast.makeText(this, "Não achamos esse prontuário", Toast.LENGTH_SHORT).show();
         System.out.println("True ou false: " + verifica);
-
     }
 }}
 

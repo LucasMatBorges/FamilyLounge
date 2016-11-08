@@ -45,7 +45,7 @@
         android:paddingLeft="64dp"
         android:paddingRight="64dp"
         android:textSize="16sp"
-        android:text="Tenha uma visão geral de todos os procedimentos numa só tela"
+        android:text="Visão geral de todos as etapas do procedimento numa só tela"
         android:textStyle="bold" />
     <TextView
         android:layout_width="fill_parent"
