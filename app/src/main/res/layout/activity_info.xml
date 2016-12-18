@@ -39,11 +39,88 @@
                 android:layout_marginRight="15dp" />
 
             <TextView
-                android:text="TextView tView tView tView tView tView tView tView tViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtVieViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtVieViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtVieViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtVieViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtVieViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtVieViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtViewtView"
+                android:text="Desenvolvido por alunos do Insper junto com o Hospital Israelita Albert Einstein "
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView5"
                 android:gravity="center"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+
+            <TextView
+                android:text="A EQUIPE "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/textVieweEQUIPE"
+                android:textStyle="bold" />
+
+            <TextView
+                android:text="Arthur Rizzo "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/textViewArthur" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+            <TextView
+                android:text="Gabriel Patrocínio "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/textViewGabrielP" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+            <TextView
+                android:text="Gabriel Goichman "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/textViewGabrielG" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+            <TextView
+                android:text="Felipe Goichman "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewFelipe"
+                android:layout_marginLeft="15dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+            <TextView
+                android:text="Lucas Borges"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+
+                android:id="@+id/textViewLucas" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
 
         </LinearLayout>
     </ScrollView>

@@ -10,5 +10,8 @@
     <color name="colorWhite">#00ffffff</color>
     <color name="colorDivider">#B6B6B6</color>
     <color name="branco">#0053d0</color>
+    <color name="colorGreen">#FF43C900</color>
+    <color name="colorOrange">#ff6c03</color>
+
 
 </resources>

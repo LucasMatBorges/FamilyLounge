@@ -83,13 +83,13 @@ public class DetalheFragment extends Fragment {
 
 
 
-        BtnSala.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                BtnSala.setBackgroundColor(getContext().getResources().getColor(R.color.colorAccent));
-                BtnSala.setText("vai");
-            }
-        });
+//        BtnSala.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                BtnSala.setBackgroundColor(getContext().getResources().getColor(R.color.colorAccent));
+//                BtnSala.setText("vai");
+//            }
+//        });
         return detalheView;
     }
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {

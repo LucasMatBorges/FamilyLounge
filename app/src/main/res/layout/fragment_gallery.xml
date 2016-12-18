@@ -4,426 +4,610 @@
     android:layout_height="match_parent"
     tools:context="lucasmatborges.familylounge.GalleryFragment">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/relativeLayout2"
+        android:layout_height="match_parent"
         android:background="#0084c1"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp">
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="19dp">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textColor="#fff"
-            android:background="@color/colorPrimary"
-            android:textSize="18dp"
-            android:id="@+id/buttonMedico"
-            android:layout_marginLeft="10dp"
-            android:layout_alignParentStart="true"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textColor="#fff"
-            android:background="@color/colorPrimary"
-            android:textSize="18dp"
-            android:id="@+id/buttonSala"
-            android:textAllCaps="false"
-            android:textStyle="bold"
-            android:layout_below="@+id/buttonMedico"
-            android:layout_alignStart="@+id/buttonMedico"
-            android:layout_marginTop="10dp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textColor="#fff"
-            android:background="@color/colorPrimary"
-            android:textSize="18sp"
-            android:id="@+id/buttonCirurgia"
-            android:textStyle="bold"
-            android:layout_below="@+id/buttonSala"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp" />
-
-        <TableLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/buttonCirurgia"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary">
+            android:id="@+id/relativeLayout2"
+            android:background="#0084c1"
+            android:orientation="vertical"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="50dp">
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="#fff"
+                android:background="@color/colorPrimary"
+                android:textSize="18dp"
+                android:id="@+id/buttonMedico"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentStart="true"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="#fff"
+                android:background="@color/colorPrimary"
+                android:textSize="18dp"
+                android:id="@+id/buttonSala"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:layout_below="@+id/buttonMedico"
+                android:layout_alignStart="@+id/buttonMedico"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="#fff"
+                android:background="@color/colorPrimary"
+                android:textSize="18sp"
+                android:id="@+id/buttonCirurgia"
+                android:textStyle="bold"
+                android:layout_below="@+id/buttonSala"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/buttonCirurgia"
+                android:layout_marginTop="15dp"
                 android:background="@color/colorPrimary">
 
-            </TableRow>
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#FF006A9B">
+                </TableRow>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="PROCEDIMENTO "
-                    android:id="@+id/textProced"
-                    android:layout_weight="1"
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FF006A9B">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="PROCEDIMENTO "
+                        android:id="@+id/textProced"
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="INÍCIO"
+                        android:id="@+id/textInicio"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="DURAÇÃO"
+                        android:id="@+id/textDuracao"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_marginRight="15dp"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:text="INFO"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textInfo"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#0084c1"
+                    android:id="@+id/TableRowPrimario">
+
+                    <ImageView
+                        app:srcCompat="@android:color/transparent"
+                        android:id="@+id/imageViewSeparador2"
+                        android:layout_width="25dp"
+                        android:layout_height="5dp" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FF006A9B"
+                    android:id="@+id/TableRowCheck">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Check-in"
+                            android:id="@+id/textCheckProced"
+                            android:layout_weight="1"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp" />
+
+                        <ImageView
+                            app:srcCompat="@android:color/transparent"
+                            android:id="@+id/imageViewCheck"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="11:35"
+                        android:id="@+id/textCheckInicio"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="15 min"
+                        android:id="@+id/textCheckDuracao"
+                        android:layout_weight="1"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center" />
+
+                    <ImageButton
+                        android:id="@+id/buttonInfoCheck"
+                        android:background="@drawable/info"
+                        android:layout_below="@+id/button"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#0084c1"
                     android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textSize="12sp" />
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/TableRowExames">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Exames"
+                            android:id="@+id/textExameProced"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp" />
+
+                        <ImageView
+                            app:srcCompat="@android:color/transparent"
+                            android:id="@+id/imageViewExames"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="11:50"
+                        android:id="@+id/textExamesInicio"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="20 min"
+                        android:id="@+id/textView10"
+                        android:layout_weight="1"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center" />
+
+                    <ImageButton
+                        android:id="@+id/buttonInfoExames"
+                        android:background="@drawable/info"
+                        android:layout_below="@+id/button"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FF006A9B"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/TableRowAnestesia">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Anestesia "
+                        android:id="@+id/textAnestesiaProced"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp" />
+
+                        <ImageView
+                            app:srcCompat="@android:color/transparent"
+                            android:id="@+id/imageViewAnestesia"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="12:10"
+                        android:id="@+id/textAnestesiaInicio"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="10 min"
+                        android:id="@+id/textAnestesiaDuracao"
+                        android:layout_weight="1"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center" />
+
+                    <ImageButton
+                        android:id="@+id/buttonInfoAnestesia"
+                        android:background="@drawable/info"
+                        android:layout_below="@+id/button"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#0084c1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/TableRowCirurgia">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Cirurgia"
+                            android:id="@+id/textCirurgiaProced"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="10dp" />
+
+                        <ImageView
+                            app:srcCompat="@android:color/transparent"
+                            android:id="@+id/imageViewCirurgia"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="12:20"
+                        android:id="@+id/textCirurgiaInicio"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="90 min"
+                        android:id="@+id/textCirurgiaDuracao"
+                        android:layout_weight="1"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center" />
+
+                    <ImageButton
+                        android:id="@+id/buttonInfoCirurgia"
+                        android:background="@drawable/info"
+                        android:layout_below="@+id/button"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FF006A9B"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/TableRowFinalizacao">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Finalização"
+                        android:id="@+id/textFinalizacaoProced"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp" />
+
+                        <ImageView
+                            app:srcCompat="@android:color/transparent"
+                            android:id="@+id/imageViewFinalizacao"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="13:50"
+                        android:id="@+id/textFinalizacaoInicio"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="25 min"
+                        android:id="@+id/textFinalizacaoDuracao"
+                        android:layout_weight="1"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center" />
+
+                    <ImageButton
+                        android:id="@+id/buttonInfoFinalizacao"
+                        android:background="@drawable/info"
+                        android:layout_below="@+id/button"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#0084c1"
+                    android:id="@+id/TableRowCurativos">
+
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Curativos"
+                        android:id="@+id/textCurativosProced"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp" />
+
+                        <ImageView
+                            app:srcCompat="@android:color/transparent"
+                            android:id="@+id/imageViewCurativos"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="14:15"
+                        android:id="@+id/textCurativosInicio"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="15 min"
+                        android:id="@+id/textCurativosDuracao"
+                        android:layout_weight="1"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center" />
+
+                    <ImageButton
+                        android:id="@+id/buttonInfoCurativos"
+                        android:background="@drawable/info"
+                        android:layout_below="@+id/button"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FF006A9B"
+                    android:id="@+id/TableRowFinal">
+
+                    <ImageView
+                        app:srcCompat="@android:color/transparent"
+                        android:id="@+id/imageViewSeparador2"
+                        android:layout_width="25dp"
+                        android:layout_height="10dp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:text="LEGENDA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11"
+                android:padding="10dp"
+                android:textStyle="normal|bold" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="INÍCIO"
-                    android:id="@+id/textInicio"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="DURAÇÃO"
-                    android:id="@+id/textDuracao"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:layout_marginRight="15dp"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:text="INFO"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textInfo"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp" />
-
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#FF006A9B">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Check-in       [x]"
-                    android:id="@+id/textCheckProced"
+                    android:text="CONCLUÍDO"
+                    android:id="@+id/text16"
                     android:layout_weight="1"
                     android:layout_marginTop="5dp"
-                    android:gravity="center" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="10:35"
-                    android:id="@+id/textCheckInicio"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="15 min"
-                    android:id="@+id/textCheckDuracao"
-                    android:layout_weight="1"
-                    android:layout_marginRight="15dp"
-                    android:gravity="center" />
-
-                <ImageButton
-                    android:id="@+id/buttonInfoCheck"
-                    android:background="@drawable/info"
-                    android:layout_below="@+id/button"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp" />
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#0084c1"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Exames        [x]"
-                    android:id="@+id/textExamesProced"
-                    android:layout_weight="1"
                     android:gravity="center"
-                    android:layout_marginTop="5dp" />
+                    android:textStyle="normal|bold"
+                    android:layout_marginLeft="25dp" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="10:35"
-                    android:id="@+id/textExamesInicio"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="15 min"
-                    android:id="@+id/textView10"
-                    android:layout_weight="1"
-                    android:layout_marginRight="15dp"
-                    android:gravity="center" />
-
-                <ImageButton
-                    android:id="@+id/buttonInfoExames"
-                    android:background="@drawable/info"
-                    android:layout_below="@+id/button"
-                    android:layout_centerHorizontal="true"
+                <ImageView
+                    app:srcCompat="@drawable/check"
+                    android:id="@+id/imageView15"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp" />
+                    android:layout_marginLeft="10dp" />
+            </LinearLayout>
 
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#FF006A9B"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Anestesia    [x]"
-                    android:id="@+id/textAnestesiaProced"
+                    android:text="EM ANDAMENTO"
+                    android:id="@+id/text17"
                     android:layout_weight="1"
+                    android:layout_marginTop="5dp"
                     android:gravity="center"
-                    android:layout_marginTop="5dp" />
+                    android:textStyle="normal|bold"
+                    android:layout_marginLeft="25dp" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="10:35"
-                    android:id="@+id/textAnestesiaInicio"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="15 min"
-                    android:id="@+id/textAnestesiaDuracao"
-                    android:layout_weight="1"
-                    android:layout_marginRight="15dp"
-                    android:gravity="center" />
-
-                <ImageButton
-                    android:id="@+id/buttonInfoAnestesia"
-                    android:background="@drawable/info"
-                    android:layout_below="@+id/button"
-                    android:layout_centerHorizontal="true"
+                <ImageView
+                    app:srcCompat="@drawable/pendente"
+                    android:id="@+id/imageView16"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp" />
+                    android:layout_marginLeft="10dp" />
+            </LinearLayout>
 
-            </TableRow>
 
-            <TableRow
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#0084c1"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
+                android:layout_height="wrap_content"
+                android:id="@+id/textView12"
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Cirurgia        [x]"
-                    android:id="@+id/textCirurgiaProced"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginTop="5dp" />
+                android:text="Para mais informações, favor se dirigir ao balcão de atendimento"
+                android:gravity="center_horizontal"
+                android:textColor="#FF880000"
+                android:textStyle="normal|bold"
+                android:textSize="18sp" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="10:35"
-                    android:id="@+id/textCirurgiaInicio"
-                    android:layout_weight="1"
-                    android:gravity="center" />
+        </LinearLayout>
+    </ScrollView>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="15 min"
-                    android:id="@+id/textCirurgiaDuracao"
-                    android:layout_weight="1"
-                    android:layout_marginRight="15dp"
-                    android:gravity="center" />
-
-                <ImageButton
-                    android:id="@+id/buttonInfoCirurgia"
-                    android:background="@drawable/info"
-                    android:layout_below="@+id/button"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#FF006A9B"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Finalização [x]"
-                    android:id="@+id/textFinalizacaoProced"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginTop="5dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="10:35"
-                    android:id="@+id/textFinalizacaoInicio"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="15 min"
-                    android:id="@+id/textFinalizacaoDuracao"
-                    android:layout_weight="1"
-                    android:layout_marginRight="15dp"
-                    android:gravity="center" />
-
-                <ImageButton
-                    android:id="@+id/buttonInfoFinalizacao"
-                    android:background="@drawable/info"
-                    android:layout_below="@+id/button"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#0084c1">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Curativos    [x]"
-                    android:id="@+id/textCurativosProced"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginTop="5dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="10:35"
-                    android:id="@+id/textCurativosInicio"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="15 min"
-                    android:id="@+id/textCurativosDuracao"
-                    android:layout_weight="1"
-                    android:layout_marginRight="15dp"
-                    android:gravity="center" />
-
-                <ImageButton
-                    android:id="@+id/buttonInfoCurativos"
-                    android:background="@drawable/info"
-                    android:layout_below="@+id/button"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp" />
-
-            </TableRow>
-
-        </TableLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Para mais informações, favor se dirigir ao balcão de atendimento"
-            android:id="@+id/textView9"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:background="#0084c1"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="23dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:textColor="#FF880000" />
-
-    </RelativeLayout>
 
 </RelativeLayout>

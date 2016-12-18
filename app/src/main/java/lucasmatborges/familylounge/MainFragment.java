@@ -75,13 +75,13 @@ public class MainFragment extends Fragment {
 
                 Map<String,String> mapa = snapshot.getValue(Map.class);
 
-                String cirurgia = mapa.get("cirurgia");
+                String procedimento = mapa.get("procedimento");
                 String paciente = mapa.get("paciente");
                 String status = mapa.get("status");
                 String leito = mapa.get("leito");
 
                 BtnPaciente.setText(" " + paciente+ " ");
-                BtnCirurgia.setText(" " + cirurgia+ " ");
+                BtnCirurgia.setText(" " + procedimento+ " ");
                 //BtnLeito.setText(" " + leito+ " ");
                 BtnStatus.setText(" " + status+ " ");
             }
