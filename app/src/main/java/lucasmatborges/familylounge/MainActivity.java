@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) {
             //Set the fragment initially
-            InfoFragment fragment = new InfoFragment();
+            MainFragment fragment = new MainFragment();
             final String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
             Bundle bundle = new Bundle();
             bundle.putString("my_key", send);

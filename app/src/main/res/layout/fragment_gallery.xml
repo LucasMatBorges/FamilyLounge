@@ -8,10 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#0084c1"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginTop="19dp">
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -604,7 +603,10 @@
                 android:gravity="center_horizontal"
                 android:textColor="#FF880000"
                 android:textStyle="normal|bold"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:layout_marginTop="75dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
 
         </LinearLayout>
     </ScrollView>
