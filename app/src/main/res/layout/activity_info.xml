@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="lucasmatborges.familylounge.InfoActivity">
+    tools:context="lucasmatborges.familylounge.InfoActivity"
+    android:background="#FFDADADA">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,7 +17,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#FFDADADA">
 
             <TextView
                 android:text="O FAMILY LOUNGE App foi criado com a missão de otimizar o tempo durante a espera dos acompanhantes de pacientes em cirurgia no hospital Albert Einsten. Com uma inteface simples e informações diretas, o aplicativo proporciona o acompanhamento da cirurgia em tempo real, com possibilidade de acessar mais informaçoes sobre cada procedimento."

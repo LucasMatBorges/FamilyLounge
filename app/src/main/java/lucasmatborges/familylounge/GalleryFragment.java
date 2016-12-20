@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -56,6 +57,22 @@ public class GalleryFragment extends Fragment {
         final ImageView ImgFinalizacao = (ImageView) galleryView.findViewById(R.id.imageViewFinalizacao);
         final ImageView ImgCurativos = (ImageView) galleryView.findViewById(R.id.imageViewCurativos);
 
+        // TEXT VIEW INICIO PROCEDIMENTO
+        final TextView TextCheckInic= (TextView) galleryView.findViewById(R.id.textCheckInicio);
+        final TextView TextExamesInic = (TextView) galleryView.findViewById(R.id.textExamesInicio);
+        final TextView TextAnestesiaInic = (TextView) galleryView.findViewById(R.id.textAnestesiaInicio);
+        final TextView TextCirurgiaInic = (TextView) galleryView.findViewById(R.id.textCirurgiaInicio);
+        final TextView TextFinalizacaoInic = (TextView) galleryView.findViewById(R.id.textFinalizacaoInicio);
+        final TextView TextCurativosInic = (TextView) galleryView.findViewById(R.id.textCurativosInicio);
+
+        // TEXT VIEW DURACACAO PROCEDIMENTO
+        final TextView TextCheckDur = (TextView) galleryView.findViewById(R.id.textCheckDuracao);
+        final TextView TextExamesDur = (TextView) galleryView.findViewById(R.id.textExamesDuracao);
+        final TextView TextAnestesiaDur = (TextView) galleryView.findViewById(R.id.textAnestesiaDuracao);
+        final TextView TextCirurgiaDur = (TextView) galleryView.findViewById(R.id.textCirurgiaDuracao);
+        final TextView TextFinalizacaoDur = (TextView) galleryView.findViewById(R.id.textFinalizacaoDuracao);
+        final TextView TextCurativosDur = (TextView) galleryView.findViewById(R.id.textCurativosDuracao);
+
 
         final Button BtnSala = (Button) galleryView.findViewById(R.id.buttonSala);
         final Button BtnMedico = (Button) galleryView.findViewById(R.id.buttonMedico);
@@ -83,6 +100,36 @@ public class GalleryFragment extends Fragment {
                 String sala = mapa.get("sala");
                 String medico = mapa.get("medico");
                 String status = mapa.get("status");
+
+                String anestesia = mapa.get("anestesia");
+                String[] arrayanestesia = anestesia.split(",");
+                TextAnestesiaInic.setText(arrayanestesia[0]);
+                TextAnestesiaDur.setText(arrayanestesia[1]);
+
+                String check = mapa.get("check");
+                String[] arraycheck = check.split(",");
+                TextCheckInic.setText(arraycheck[0]);
+                TextCheckDur.setText(arraycheck[1]);
+
+                String cirurgia2 = mapa.get("cirurgia");
+                String[] arraycirurgia = cirurgia2.split(",");
+                TextCirurgiaInic.setText(arraycirurgia[0]);
+                TextCirurgiaDur.setText(arraycirurgia[1]);
+
+                String exames = mapa.get("exames");
+                String[] arrayexames = exames.split(",");
+                TextExamesInic.setText(arrayexames[0]);
+                TextExamesDur.setText(arrayexames[1]);
+
+                String finalizacao = mapa.get("finalizacao");
+                String[] arrayfinalizacao = finalizacao.split(",");
+                TextFinalizacaoInic.setText(arrayfinalizacao[0]);
+                TextFinalizacaoDur.setText(arrayfinalizacao[1]);
+
+                String curativos = mapa.get("curativos");
+                String[] arraycurativos = curativos.split(",");
+                TextCurativosInic.setText(arraycurativos[0]);
+                TextCurativosDur.setText(arraycurativos[1]);
 
                 if (status.equals("check")){
                     RowCheck.setBackgroundColor(getContext().getResources().getColor(R.color.colorOrange));

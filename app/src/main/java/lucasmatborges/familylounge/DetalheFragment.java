@@ -70,7 +70,6 @@ public class DetalheFragment extends Fragment {
 
                 BtnSala.setText(procedimento);
                 BtnMedico.setText("Procedimento: " + detalhe);
-
             }
 
 

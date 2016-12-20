@@ -243,7 +243,6 @@ public void verificar (){
         textoverifica.setText("false");
         openGameMulti.putExtra("POINTS_IDENTIFIER", prontuario);
         startActivity(openGameMulti);
-        Toast.makeText(this, verifica, Toast.LENGTH_SHORT).show();
         System.out.println("true: " + verifica);}
     else {
         Toast.makeText(this, "Não achamos esse prontuário", Toast.LENGTH_SHORT).show();

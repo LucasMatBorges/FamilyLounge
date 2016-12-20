@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -103,6 +104,8 @@ public class MainActivity extends AppCompatActivity
                 TextView text2 = (TextView) header.findViewById(R.id.email);
                 text.setText(paciente);
                 text2.setText(send);
+                ProgressBar barProgess1 = (ProgressBar) header.findViewById(R.id.progressBar);
+
             }
 
             @Override
@@ -226,7 +229,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) {
             //Set the fragment initially
-            MainFragment fragment = new MainFragment();
+            DetalheFragment fragment = new DetalheFragment();
             final String send = getIntent().getStringExtra("POINTS_IDENTIFIER");
             Bundle bundle = new Bundle();
             bundle.putString("my_key", send);
